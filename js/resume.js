@@ -25,10 +25,18 @@
     target: '#sideNav'
   });
   
-  const skillClasses = ['java', 'nodejs', 'javascript', 'ruby_on_rails', 'mongodb', 'mysql', 'postgresql', 'debian', 'html5', 'nginx', 'css3', 'jquery', 'sass', 'bootstrap', 'npm', 'terminal', 'code', 'netbeans', 'brackets', 'eclipse', 'cloud9', 'scrum', 'mongodb', 'sublime', 'aws', 'sqllite', 'vim', 'react', 'code', 'ubuntu', 'linux', 'windows', 'angular', 'database', 'ruby', 'github', 'bitbucket', 'visualstudio', 'docker', 'backbone']
+  const skillClasses = [
+    'java', 'nodejs', 'javascript', 'ruby_on_rails', 'mysql',
+    'postgresql', 'debian', 'html5', 'nginx', 'css3', 'jquery', 'sass',
+    'bootstrap', 'npm', 'terminal', 'code', 'netbeans', 'brackets', 'eclipse',
+    'cloud9', 'scrum', 'mongodb', 'sublime', 'aws', 'sqllite', 'vim', 'react',
+    'ubuntu', 'linux', 'windows', 'angular', 'database', 'ruby',
+    'github', 'bitbucket', 'visualstudio', 'docker', 'backbone'
+  ]
   var arr = []
-  skillClasses.each((skill) => {
-    arr.push('<li class="list-inline-item"><i class="devicons devicons-',skill,'"></i></li>')
+  skillClasses.forEach((skill) => {
+    arr.push('<li class="list-inline-item" title="',skill.toLocaleUpperCase(),'">')
+    arr.push('<i class="devicons devicons-',skill,'"></i></li>')
   })
-  $("#skills ul.list-icons").html(arr.join('')
+  $("#skills ul.list-icons").html(arr.join(''))
 })(jQuery); // End of use strict
