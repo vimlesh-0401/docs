@@ -220,7 +220,7 @@
     }
 
     .table-wrap {
-      max-height: 900px;
+      max-height: 800px;
       overflow: auto;
       border-radius: 12px;
       border: 1px solid var(--border-color);
@@ -246,7 +246,7 @@
     }
 
     th, td {
-      padding: 16px;
+      padding: 16px 8px;
       text-align: left;
       vertical-align: top;
       border-bottom: 1px solid var(--border-color);
@@ -259,7 +259,6 @@
       color: var(--accent-blue);
       position: sticky;
       top: 0;
-      z-index: 10;
     }
 
     tr:hover {
@@ -310,7 +309,7 @@
 
     .csv-editor {
       width: 100%;
-      height: 350px;
+      height: 300px;
       font-family: 'JetBrains Mono', monospace;
       padding: 20px;
       border: 2px solid var(--border-color);
@@ -659,13 +658,239 @@
     .code-block code.c { color: #4facfe; }
     .code-block code.bash { color: #2ed573; }
 
+    /* Diagram explanation styles */
+    .diagram-explanation {
+      background: rgba(83, 82, 237, 0.1);
+      border: 1px solid rgba(83, 82, 237, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .diagram-explanation p {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .explanation-points {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .step-num {
+      background: var(--accent-blue);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content strong {
+      color: var(--text-primary);
+      font-size: 13px;
+    }
+
+    .step-content code {
+      background: var(--card-bg);
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: var(--accent-purple);
+      font-size: 12px;
+    }
+
+    .flow-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .legend-arrow {
+      color: var(--accent-purple);
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .class-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .class-info {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-orange);
+    }
+
+    .class-info h4 {
+      color: var(--accent-orange);
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .class-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .class-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .class-info li {
+      font-size: 12px;
+      color: var(--text-secondary);
+      padding: 3px 0;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .class-info li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
+    .class-info code {
+      background: var(--card-bg);
+      padding: 1px 3px;
+      border-radius: 2px;
+      color: var(--accent-purple);
+      font-size: 11px;
+    }
+
+    .compact-insights {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .insight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    .insight-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .insight div {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .insight strong {
+      color: var(--accent-green);
+    }
+
+    .examples-intro {
+      background: linear-gradient(135deg, rgba(255, 107, 138, 0.1), rgba(79, 172, 254, 0.1));
+      border: 1px solid var(--accent-blue);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .examples-intro p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .example-explanation {
+      background: rgba(255, 165, 2, 0.1);
+      border: 1px solid rgba(255, 165, 2, 0.3);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .example-explanation p {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .example-explanation strong {
+      color: var(--accent-orange);
+    }
+
     @media (max-width: 768px) {
-      .examples-grid {
+      .explanation-points {
+        gap: 10px;
+      }
+      
+      .point {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .class-breakdown {
         grid-template-columns: 1fr;
       }
       
-      .example-card.span-2 {
-        grid-column: span 1;
+      .compact-insights {
+        gap: 8px;
+      }
+      
+      .insight {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
       }
     }
 
@@ -814,30 +1039,91 @@ lib/email_validator.rb:18:in `check_format'
     </div>
 
     <div class="grid">
-      <div id="sequenceCard" class="card span-2">
+      <div id="sequenceCard" class="card">
         <h2>Sequence Diagram</h2>
+        <div class="diagram-explanation">
+          <p><strong>Shows the chronological flow</strong> of how Ruby creates a backtrace when an exception occurs. Each arrow represents a function call or data flow between components.</p>
+          <div class="explanation-points">
+            <div class="point">
+              <span class="step-num">1</span>
+              <div class="step-content">
+                <strong>Ruby Code → Ruby VM</strong><br>
+                When <code>raise "error"</code> is executed, control passes from Ruby-land to the C-level VM via <code>rb_raise()</code>
+              </div>
+            </div>
+            <div class="point">
+              <span class="step-num">2</span>
+              <div class="step-content">
+                <strong>VM → Control Frames</strong><br>
+                The VM accesses the current execution context and walks the control frame stack (<code>rb_control_frame_t</code> chain)
+              </div>
+            </div>
+            <div class="point">
+              <span class="step-num">3</span>
+              <div class="step-content">
+                <strong>Frames → Backtrace Builder</strong><br>
+                Each frame's instruction sequence (iseq) is processed to extract file paths, line numbers, and method names
+              </div>
+            </div>
+            <div class="point">
+              <span class="step-num">4</span>
+              <div class="step-content">
+                <strong>Builder → Exception Object</strong><br>
+                Location data is formatted into <code>Thread::Backtrace::Location</code> objects and attached to the exception
+              </div>
+            </div>
+            <div class="point">
+              <span class="step-num">5</span>
+              <div class="step-content">
+                <strong>Exception → Ruby Code</strong><br>
+                The final backtrace array is returned to Ruby, accessible via <code>Exception#backtrace</code>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="mermaid">
 sequenceDiagram
-participant RC as Ruby Code
-participant VM as Ruby VM (C)
-participant CF as Control Frames
-participant BB as Backtrace Builder
-participant EO as Exception Object
+    participant RC as Ruby Code
+    participant VM as Ruby VM (C)
+    participant CF as Control Frames
+    participant BB as Backtrace Builder
+    participant EO as Exception Object
 
-RC->>VM: raise "error"
-Note over VM: rb_raise / rb_exc_raise
-VM->>CF: Snapshot call stack
-Note over CF: rb_control_frame_t
-CF->>BB: Extract file/line/method
-Note over BB: vm_backtrace.c
-BB->>EO: Build & stringify
-Note over EO: Exception#backtrace
-EO-->>RC: Array&lt;String&gt;
+    RC->>+VM: raise "error"
+    Note over VM: rb_raise / rb_exc_raise
+    VM->>+CF: Snapshot call stack
+    Note over CF: rb_control_frame_t
+    CF->>+BB: Extract file/line/method
+    Note over BB: vm_backtrace.c
+    BB->>+EO: Build & stringify
+    Note over EO: Exception#backtrace
+    EO-->>-RC: Array String
+    deactivate BB
+    deactivate CF
+    deactivate VM
         </div>
       </div>
 
       <div id="flowCard" class="card">
         <h2>Inline Flow Diagram</h2>
+        <div class="diagram-explanation">
+          <p><strong>Visualizes the data transformation pipeline</strong> from exception trigger to final backtrace. This SVG diagram shows how information flows through Ruby's internal systems.</p>
+          <div class="flow-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background: var(--card-bg); border: 2px solid var(--accent-blue);"></div>
+              <span>Internal Components - Each box represents a major system in Ruby's VM</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-arrow">→</div>
+              <span>Data Flow - Shows how exception data moves between components</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: var(--accent-purple); width: 12px; height: 2px;"></div>
+              <span>Return Path - The final backtrace array flows back to the originating code</span>
+            </div>
+          </div>
+          <p><em>Key insight:</em> Notice how the process forms a cycle - the exception data travels through multiple C-level components before returning as a Ruby array.</p>
+        </div>
         <div class="svg-container">
           <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" class="flow-svg">
             <defs>
@@ -878,6 +1164,38 @@ EO-->>RC: Array&lt;String&gt;
 
       <div id="classCard" class="card">
         <h2>Class Diagram</h2>
+        <div class="diagram-explanation">
+          <p><strong>Shows the object-oriented structure</strong> of Ruby's backtrace system. This UML-style diagram reveals the relationships between classes and their responsibilities.</p>
+          <div class="class-breakdown">
+            <div class="class-info">
+              <h4>📦 Exception Class</h4>
+              <p>The main container for error information. Every Ruby exception inherits from this base class.</p>
+              <ul>
+                <li><code>message</code> - The error description string</li>
+                <li><code>backtrace</code> - Array of location strings (what you see in logs)</li>
+                <li><code>backtrace_locations</code> - Array of Location objects (richer data)</li>
+              </ul>
+            </div>
+            <div class="class-info">
+              <h4>🌍 Thread::Backtrace::Location Class</h4>
+              <p>Represents a single frame in the call stack with detailed location information.</p>
+              <ul>
+                <li><code>path</code> - Full file path (/app/models/user.rb)</li>
+                <li><code>lineno</code> - Exact line number where the call occurred</li>
+                <li><code>label</code> - Method or block name (validate_email)</li>
+              </ul>
+            </div>
+            <div class="class-info">
+              <h4>🧵 Thread Class</h4>
+              <p>Provides static methods to access backtrace information for any thread.</p>
+              <ul>
+                <li><code>current_backtrace</code> - Get current call stack</li>
+                <li><code>backtrace</code> - Get formatted string array</li>
+              </ul>
+            </div>
+          </div>
+          <p><em>Relationship:</em> One Exception can contain many Location objects, forming a complete picture of the execution path.</p>
+        </div>
         <div class="mermaid">
 classDiagram
     class Exception {
@@ -905,6 +1223,30 @@ classDiagram
 
       <div id="compactCard" class="card">
         <h2>Compact Flow</h2>
+        <div class="diagram-explanation">
+          <p><strong>Simplified view of the complete backtrace lifecycle.</strong> This flowchart emphasizes the circular nature of exception handling - from Ruby code back to Ruby code.</p>
+          <div class="compact-insights">
+            <div class="insight">
+              <span class="insight-icon">🔄</span>
+              <div>
+                <strong>Circular Process:</strong> Exceptions start in Ruby code and return processed data back to Ruby code
+              </div>
+            </div>
+            <div class="insight">
+              <span class="insight-icon">⚡</span>
+              <div>
+                <strong>Speed Matters:</strong> This process happens in microseconds, even for deep call stacks
+              </div>
+            </div>
+            <div class="insight">
+              <span class="insight-icon">🎯</span>
+              <div>
+                <strong>No Data Loss:</strong> Every method call in the stack is captured and can be inspected
+              </div>
+            </div>
+          </div>
+          <p><em>Color coding:</em> Each step has a unique color to help you trace the flow visually. The return arrow completes the cycle.</p>
+        </div>
         <div class="mermaid">
 flowchart TD
     A[🐛 Ruby Code<br/>raise 'error'] --> B[⚙️ Ruby VM<br/>rb_raise]
@@ -952,10 +1294,16 @@ flowchart TD
 
     <div class="card examples-section">
       <h2>🔍 Real-World Examples</h2>
+      <div class="examples-intro">
+        <p>These examples show <strong>actual code and data structures</strong> from Ruby's MRI implementation. Each example corresponds to a specific step in the backtrace creation process, with real file paths and function signatures you'd find in the Ruby source code.</p>
+      </div>
       <div class="examples-grid">
         
         <div class="example-card">
           <h4>1. Ruby Application Code</h4>
+          <div class="example-explanation">
+            <p><strong>Where it all begins:</strong> This is typical Rails controller code where an exception might occur. The <code>raise</code> statement triggers the entire backtrace creation process.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">📁 app/controllers/users_controller.rb:42</div>
             <pre><code class="ruby">def create
@@ -969,6 +1317,9 @@ end</code></pre>
 
         <div class="example-card">
           <h4>2. MRI C Code Entry Point</h4>
+          <div class="example-explanation">
+            <p><strong>The gateway to C-land:</strong> When Ruby executes <code>raise</code>, it calls this C function. This is where Ruby's interpreter takes control and begins the backtrace process.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">🔧 eval.c:678 - rb_raise()</div>
             <pre><code class="c">void rb_raise(VALUE exc, const char *fmt, ...) {
@@ -982,6 +1333,9 @@ end</code></pre>
 
         <div class="example-card">
           <h4>3. Control Frame Structure</h4>
+          <div class="example-explanation">
+            <p><strong>The call stack blueprint:</strong> This C structure represents each method call in your program. Ruby maintains a linked list of these frames, forming the complete call stack.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">🏗️ vm_core.h:856 - rb_control_frame_t</div>
             <pre><code class="c">typedef struct {
@@ -996,6 +1350,9 @@ end</code></pre>
 
         <div class="example-card">
           <h4>4. Backtrace Location Object</h4>
+          <div class="example-explanation">
+            <p><strong>Formatting for humans:</strong> This function takes raw VM data and converts it into the readable backtrace format you see in error messages. Each line of a backtrace comes from this function.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">🌍 vm_backtrace.c:234 - location_to_str()</div>
             <pre><code class="c">static VALUE location_to_str(rb_backtrace_location_t *loc) {
@@ -1009,6 +1366,9 @@ end</code></pre>
 
         <div class="example-card span-2">
           <h4>5. Complete Stack Trace Example</h4>
+          <div class="example-explanation">
+            <p><strong>The final product:</strong> This is what you see in your terminal when an exception occurs. Each line represents one control frame from the call stack, formatted by the functions shown above. Reading from bottom to top shows the execution path.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">📊 Final backtrace output</div>
             <pre><code class="bash">Traceback (most recent call last):
@@ -1025,6 +1385,9 @@ app/controllers/users_controller.rb:42:in `create': User creation failed (Custom
 
         <div class="example-card">
           <h4>6. VM State During Exception</h4>
+          <div class="example-explanation">
+            <p><strong>Walking the stack:</strong> This shows how Ruby's VM traverses the control frame chain to gather backtrace information. It's like walking backwards through your program's execution history.</p>
+          </div>
           <div class="code-block">
             <div class="file-header">⚙️ vm.c:2156 - rb_vm_make_exception()</div>
             <pre><code class="c">VALUE rb_vm_make_exception(int argc, const VALUE *argv, 
@@ -1045,6 +1408,24 @@ app/controllers/users_controller.rb:42:in `create': User creation failed (Custom
 
         <div class="example-card">
           <h4>7. Thread::Backtrace::Location</h4>
+          <div class="example-explanation">
+            <p><strong>Ruby's public interface:</strong> This is the Ruby object that wraps the C-level location data. You can access these objects directly for programmatic backtrace analysis in your Ruby code.</p>
+          </div>
+          <div class="code-block">
+            <div class="file-header">🧵 Ruby backtrace location object</div>
+            <pre><code class="ruby"># Each location in the backtrace array:
+location = Thread::Backtrace::Location.new
+location.path     # => "/app/models/user.rb"
+location.lineno   # => 25
+location.label    # => "validate_email"
+location.to_s     # => "/app/models/user.rb:25:in `validate_email'"</code></pre>
+          </div>
+        </div></code></pre>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <h4>7. Thread::Backtrace::Location</h4>
           <div class="code-block">
             <div class="file-header">🧵 Ruby backtrace location object</div>
             <pre><code class="ruby"># Each location in the backtrace array:
@@ -1060,7 +1441,7 @@ location.to_s     # => "/app/models/user.rb:25:in `validate_email'"</code></pre>
     </div>
       <h2>📝 Embedded CSV Data</h2>
       <textarea id="csvText" class="csv-editor" placeholder="Edit the CSV data here...">
-step_order,component,action,c_function_or_struct,example_files,realistic_example
+Sr,component,action,c_function_or_struct,example_files,realistic_example
 1,"Ruby Code","raise 'error'","N/A","app/controllers/users_controller.rb:42","def create; User.create!(params); rescue => e; raise CustomError.new('User creation failed', e); end"
 2,"Ruby VM (C)","rb_raise entry","rb_raise() in eval.c","MRI source: eval.c:678","rb_raise(rb_eStandardError, ""User creation failed"") - C function called from Ruby"
 3,"Exception Object Creation","rb_exc_new_str","rb_exc_new_str() in error.c","MRI source: error.c:1891","Creates Exception instance with message, sets up basic structure before backtrace"
@@ -1097,7 +1478,7 @@ step_order,component,action,c_function_or_struct,example_files,realistic_example
     parsed.headers.forEach(h => { 
       const th = document.createElement('th'); 
       th.textContent = h; 
-      trh.appendChild(th); 
+      trh.appendChild(th);
     });
     thead.appendChild(trh);
     table.appendChild(thead);
